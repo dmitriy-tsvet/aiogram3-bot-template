@@ -1,0 +1,13 @@
+version: "3.8"
+services:
+    bot:
+        image: groosha/telegram-report-bot:latest
+        restart: always
+        stop_signal: SIGINT
+        environment:
+            - BOT_TOKEN
+            - BOT_LANGUAGE
+            - GROUP_MAIN
+            - GROUP_REPORTS
+        volumes:
+            - /etc/localtime:/etc/localtime:ro
