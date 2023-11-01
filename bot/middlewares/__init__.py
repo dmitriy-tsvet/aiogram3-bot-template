@@ -1,2 +1,7 @@
+from .throttling import MessageThrottlingMiddleware, CallbackThrottlingMiddleware
 from aiogram import Dispatcher
-from .throttling import ThrottlingMiddleware
+
+
+def setup(dp: Dispatcher):
+    dp.message.middleware(MessageThrottlingMiddleware())
+    dp.callback_query.middleware(CallbackThrottlingMiddleware())

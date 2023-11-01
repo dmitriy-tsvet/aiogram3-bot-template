@@ -1,11 +1,11 @@
 import logging
-from aiogram import Dispatcher
+from aiogram import Bot
 from bot.config import BOT_ADMINS
 
 
-async def notify(dp: Dispatcher):
+async def notify(bot: Bot):
     for admin in BOT_ADMINS:
         try:
-            await dp.bot.send_message(admin, "Бот запущен.")
+            await bot.send_message(admin, "The bot is running!")
         except Exception as err:
             logging.exception(err)

@@ -42,7 +42,7 @@ class TransactionDatabase(BaseDatabase):
         pass
 
     def __str__(self):
-        return f"{self.name}+{self.interface}//{self.username}:{self.password}@" \
+        return f"{self.name}+{self.interface}://{self.username}:{self.password}@" \
                f"{self.hostname}:{self.port}/{self.database_name}"
 
 
@@ -64,5 +64,5 @@ class AsyncDatabase(BaseDatabase):
         pass
 
     def __str__(self):
-        return f"{self.name}+{self.interface}//{self.username}:{self.password}@" \
+        return f"{self.name}+{self.interface}://{self.username}:{self.password}@" \
                f"{self.hostname}:{self.port}/{self.database_name}"
