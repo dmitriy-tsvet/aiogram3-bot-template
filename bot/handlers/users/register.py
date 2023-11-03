@@ -7,6 +7,7 @@ from sqlalchemy.orm.session import sessionmaker
 from sqlalchemy import select
 from bot import models, filters
 
+
 async def register_message_handler(message: types.Message, session: sessionmaker):
     user_id = message.from_user.id
     user_fullname = message.from_user.full_name

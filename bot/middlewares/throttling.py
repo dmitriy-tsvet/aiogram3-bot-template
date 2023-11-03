@@ -13,7 +13,6 @@ class MessageThrottlingMiddleware(BaseMiddleware):
     def __init__(self):
         self.cache_l1 = TTLCache(maxsize=10_000, ttl=config.THROTTLE_RATE)
         self.cache_l2 = TTLCache(maxsize=10_000, ttl=THROTTLE_RATE_L2)
-        InputFile()
 
     async def __call__(
         self,

@@ -13,7 +13,7 @@ async def stats_message_handler(message: types.Message, session: sessionmaker):
         users: typing.List[models.sql.User] = await open_session.execute(
             select([func.count()]).select_from(models.sql.User))
         users_count: int = users.scalars().first()
-        await message.answer(f"Всего пользователей: {users_count}\n")
+        await message.answer(f"Всего пользователей: {users_count}")
 
 
 def setup(dp: Dispatcher):
